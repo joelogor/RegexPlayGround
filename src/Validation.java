@@ -15,11 +15,15 @@ public class Validation {
         }
 
         public static boolean ValidatePassword(String password) {
-            String regex = "^[A-Za-z]\\w*$";"
+            String regex = "^(?=.*\\d)(?=.*[@_+#])\\S{8,16}$";
+            password = password.trim();
+            if ( password == "" || password == null ) {
+                return false;
+            }
+            return password.matches(regex);
         }
 
 
 
 
 }
-ork
